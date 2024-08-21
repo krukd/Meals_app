@@ -1,7 +1,10 @@
-const Meals = () => {
-    return (
-        <h1>Meals component</h1>
-    )
-}
+import { useContext } from "react";
+import { useGlobalContext } from "../context";
 
-export default Meals
+const Meals = () => {
+  const context = useGlobalContext();
+  console.log(context);
+  return <h1>Meals component</h1>;
+};
+
+export default Meals;
