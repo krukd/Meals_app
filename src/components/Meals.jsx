@@ -1,4 +1,5 @@
 import { useGlobalContext } from "../context";
+import { FaRegThumbsUp } from "react-icons/fa";
 
 const Meals = () => {
   const { meals } = useGlobalContext();
@@ -8,11 +9,11 @@ const Meals = () => {
         const {idMeal, strMeal: title, strMealThumb: image} = meal
 
         return <article key={idMeal} className="single-meal">
-            <img src={image} className="img" style={{width: '200px'}} />
+            <img src={image} className="img" />
 
             <footer>
                 <h5>{title}</h5>
-                <button className="like-btn">click me</button>
+                <button className="like-btn"><FaRegThumbsUp /></button>
             </footer>
         </article>
     })}
