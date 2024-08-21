@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
-import axios from 'axios';
+import axios from 'axios'
+import { useState } from "react";
 
 const AppContext = React.createContext();
 
@@ -7,10 +8,13 @@ const allMealsUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=a";
 const randomMealUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
 
 const AppProvider = ({ children }) => {
+
+    const [meals, setMeals] = useState([])
   const fetchMeals = async (url) => {
     try {
       const {data} = await axios(url);
-      console.log(data);
+      setMeals(data.meals)
+      
     } catch (error) {
       console.log(error.response);
     }
@@ -18,7 +22,7 @@ const AppProvider = ({ children }) => {
   useEffect(() => {
     fetchMeals(allMealsUrl);
   }, []);
-  return <AppContext.Provider value="hello">{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{meals}}>{children}</AppContext.Provider>;
 };
 
 //кастомный хук контекст
