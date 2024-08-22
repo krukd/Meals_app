@@ -160,7 +160,7 @@ ul {
 
 .btn-hipster {
   color: var(--primary-500);
-  background: var(--black);
+  background: var(--green-light);
 }
 
 .btn-hipster:hover {
@@ -244,3 +244,40 @@ ul {
   color: var(--red-dark);
   transform: translateY(-2px);
 }
+
+/* Search */
+
+.search-container {
+  height: 5rem;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-container form {
+  width: var(--view-width);
+  max-width: var(--max-width);
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.search-container .form-input {
+  max-width: 200px;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--grey-200);
+  background: var(--backgroundColor);
+}
+
+::placeholder {
+  font-family: inherit;
+  color: var(--grey-400);
+}
+
+.search-container .btn {
+  font-size: 0.75rem;
+}
+
+
