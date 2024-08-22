@@ -2,8 +2,14 @@ import { useGlobalContext } from "../context";
 import { FaRegThumbsUp } from "react-icons/fa";
 
 const Meals = () => {
-  const { meals } = useGlobalContext();
+  const { loading, meals } = useGlobalContext();
 
+
+  if(loading){
+    return <section className="section">
+      <h4>Loading...</h4>
+    </section>
+  }
   return <section className="section-center">
     {meals.map((meal) => {
         const {idMeal, strMeal: title, strMealThumb: image} = meal
