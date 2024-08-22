@@ -2,7 +2,7 @@ import { useGlobalContext } from "../context";
 import { FaRegThumbsUp } from "react-icons/fa";
 
 const Meals = () => {
-  const { loading, meals } = useGlobalContext();
+  const { loading, meals, selectMeal } = useGlobalContext();
 
   if(loading){
     return <section className="section">
@@ -20,7 +20,7 @@ const Meals = () => {
         const {idMeal, strMeal: title, strMealThumb: image} = meal
 
         return <article key={idMeal} className="single-meal">
-            <img src={image} className="img" />
+            <img src={image} className="img" onClick={() => selectMeal(idMeal)} />
 
             <footer>
                 <h5>{title}</h5>
