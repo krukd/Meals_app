@@ -4,12 +4,14 @@ import { useState } from "react";
 
 const AppContext = React.createContext();
 
-const allMealsUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=a";
+const allMealsUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 const randomMealUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
 
 const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [meals, setMeals] = useState([]);
+  const [search, setSearch] = useState('')
+  
 
   const fetchMeals = async (url) => {
 
@@ -28,10 +30,10 @@ const AppProvider = ({ children }) => {
     setLoading(false);
   };
   useEffect(() => {
-    fetchMeals(allMealsUrl);
-  }, []);
+    fetchMeals(`${allMealsUrl}${search}`)
+  }, [search]);
   return (
-    <AppContext.Provider value={{ loading, meals }}>
+    <AppContext.Provider value={{ loading, meals, setSearch }}>
       {children}
     </AppContext.Provider>
   );
