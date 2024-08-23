@@ -280,6 +280,8 @@ ul {
   font-size: 0.75rem;
 }
 
+/* Modal */
+
 .modal-container {
   background: rgba(0, 0, 0, 0.85);
   width: 100%;
@@ -312,10 +314,6 @@ ul {
   padding: 1rem 1.5rem;
 }
 
-/* .modal-content p{
-  background-color: var(--grey-100);
-} */
-
 .btn-close {
   background: var(--red-dark);
   color: var(--white);
@@ -331,5 +329,50 @@ ul {
 
 .modal-content a:hover {
  color: var(--black);
+}
+
+/* Favorites */
+
+.favorites-container {
+  padding: 1rem 0;
+  background: var(--black);
+  color: var(--white);
+}
+
+.favorites-content {
+  width: var(--view-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.favorites-meals {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.favorite-meal {
+  text-align: center;
+}
+
+.favorites-img {
+  width: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 5px solid var(--white);
+}
+
+.delete-btn {
+  color: white;
+  background: transparent;
+  border: transparent;
+  margin-bottom: 0.25rem;
+  font-size: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.delete-btn:hover {
+  color: var(--red-dark);
 }
 

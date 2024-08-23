@@ -2,7 +2,7 @@ import { useGlobalContext } from "../context";
 import { FaRegThumbsUp } from "react-icons/fa";
 
 const Meals = () => {
-  const { loading, meals, selectMeal } = useGlobalContext();
+  const { loading, meals, selectMeal, addFavoriteMeal} = useGlobalContext();
 
   if(loading){
     return <section className="section">
@@ -24,7 +24,7 @@ const Meals = () => {
 
             <footer>
                 <h5>{title}</h5>
-                <button className="like-btn"><FaRegThumbsUp /></button>
+                <button className="like-btn" onClick={() => addFavoriteMeal(idMeal)}><FaRegThumbsUp /></button>
             </footer>
         </article>
     })}
